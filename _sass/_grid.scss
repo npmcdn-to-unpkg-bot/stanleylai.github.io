@@ -1,264 +1,58 @@
-/*
- * Grid Styles
- *
- * Adapted from Gridpak Generator by @simplygoodwork
- * http://gridpak.com/
- */
+//
+// Responsive Grid Styles
+//
 
-// Reusable column setup
-@mixin col {
-    float: left;
+// Calculate the precentage width that c columns would occupy, including internal gutters
+@function columnsWidth($c) {
+    // $sizeOfGutters: $gutter * ($c - 1);
+    // $sizeOfContentArea: ((100% - ($gutter * ($max-columns + 1))) / $max-columns) * $c;
+    // @return $sizeOfContentArea + $sizeOfGutters;
 
-    margin-left:1.25%;
-    padding:0 0px;
-
-    border: 0px solid rgba(0,0,0,0);
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
-    -moz-background-clip: padding-box !important;
-    -webkit-background-clip: padding-box !important;
-    background-clip: padding-box !important;
+    // Simplied version of the above equations
+    @return $c * (100% - $gutter) * (1 / $max-columns) - $gutter;
 }
 
-.col {
-    @include col;
+// Row
+// Wrapper for columns
+.row {
+    display: flex;
+
+    width: 100%;
+    max-width: $max-width;
+    // margin: 0 auto;
+
+    // DEBUG
+    margin: 20px auto;
 }
 
-// Grid Column Mixin
-@mixin span($num,
-            $gutter_pc,
-            $gutter_px,
-            $padding,
-            $max_columns) {
+// Column
+// Base styles for columns
+.column {
+    flex: 1 1;
+    margin-left: $gutter;
 
-    $one_col: (100% - ($gutter_pc * ($max_columns - 1))) / $max_columns;
+    // DEBUG
+    outline: 1px solid red;
 
-    width: ($one_col * $num) + ($gutter_pc * ($num - 1));
-    margin-left: $gutter_pc;
-    padding: $padding;
-
-    border-left-width: $gutter_px;
-}
-
-@mixin span_first {
-    margin-left: 0;
-}
-
-/* 1. 8 Column Grid 0px - 379px (for Mobile)
------------------------------------------------------------------------------
-
-Span 1:    11.40625%
-Span 2:    24.0625%
-Span 3:    36.71875%
-Span 4:    49.375%
-Span 5:    62.03125%
-Span 6:    74.6875%
-Span 7:    87.34375%
-Span 8:    100%
-
------------------------------------------------------------------------------ */
-
-@media screen and (min-width: 0px) and (max-width: 379px) {
-
-    /* --- Gridpak variables ---*/
-    $max_columns: $max_columns--mobile;
-
-    .row .col:first-child {
-        @include span_first;
-    }
-
-    .span_1 {
-        @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_2 {
-        @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_3 {
-        @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_4 {
-        @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_5 {
-        @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_6 {
-        @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_7 {
-        @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_8 {
-        @include span_first;
-        width:100%;
+    // Add outside gutter for last column
+    &:last-child {
+        margin-right: $gutter;
     }
 }
 
-/* 2. 16 Column Grid 380px - 1279px (for Desktop)
------------------------------------------------------------------------------
-
-Span 1:    5.078125%
-Span 2:    11.40625%
-Span 3:    17.734375%
-Span 4:    24.0625%
-Span 5:    30.390625%
-Span 6:    36.71875%
-Span 7:    43.046875%
-Span 8:    49.375%
-Span 9:    55.703125%
-Span 10:    62.03125%
-Span 11:    68.359375%
-Span 12:    74.6875%
-Span 13:    81.015625%
-Span 14:    87.34375%
-Span 15:    93.671875%
-Span 16:    100%
-
------------------------------------------------------------------------------ */
-
-@media screen and (min-width: 380px) and (max-width: 1279px) {
-
-    /* --- Gridpak variables ---*/
-    $max_columns: $max_columns--desktop;
-
-    .row .col:first-child {
-        @include span_first;
-    }
-
-    .span_1 {
-        @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_2 {
-        @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_3 {
-        @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_4 {
-        @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_5 {
-        @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_6 {
-        @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_7 {
-        @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_8 {
-        @include span(8, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_9 {
-        @include span(9, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_10 {
-        @include span(10, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_11 {
-        @include span(11, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_12 {
-        @include span(12, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_13 {
-        @include span(13, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_14 {
-        @include span(14, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_15 {
-        @include span(15, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_16 {
-        @include span_first;
-        width:100%;
+// Column Size
+// Expand .column to occupy specific number of columns
+@for $i from 1 through $max-columns {
+    .column__size-#{$i} {
+        flex: 0 0;
+        flex-basis: columnsWidth($i);
     }
 }
 
-/* 3. 16 Column Grid 1280px - Infinity (for Desktop)
------------------------------------------------------------------------------
-
-Span 1:    5.078125%
-Span 2:    11.40625%
-Span 3:    17.734375%
-Span 4:    24.0625%
-Span 5:    30.390625%
-Span 6:    36.71875%
-Span 7:    43.046875%
-Span 8:    49.375%
-Span 9:    55.703125%
-Span 10:    62.03125%
-Span 11:    68.359375%
-Span 12:    74.6875%
-Span 13:    81.015625%
-Span 14:    87.34375%
-Span 15:    93.671875%
-Span 16:    100%
-
------------------------------------------------------------------------------ */
-
-@media screen and (min-width: 1280px) {
-
-    /* --- Gridpak variables ---*/
-    $max_columns: 16;
-    $padding: 0 0px;
-    $gutter_px: 0;
-    $gutter_pc: 1.25%;
-
-    .row .col:first-child {
-        @include span_first;
-    }
-
-    .span_1 {
-        @include span(1, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_2 {
-        @include span(2, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_3 {
-        @include span(3, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_4 {
-        @include span(4, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_5 {
-        @include span(5, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_6 {
-        @include span(6, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_7 {
-        @include span(7, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_8 {
-        @include span(8, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_9 {
-        @include span(9, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_10 {
-        @include span(10, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_11 {
-        @include span(11, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_12 {
-        @include span(12, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_13 {
-        @include span(13, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_14 {
-        @include span(14, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_15 {
-        @include span(15, $gutter_pc, $gutter_px, $padding, $max_columns);
-    }
-    .span_16 {
-        @include span_first;
-        width:100%;
+// Column Offset
+// Push .column to the right by specified number of columns
+@for $i from 1 through $max-columns {
+    .column__offset-#{$i} {
+        margin-left: $gutter * 2 + columnsWidth($i); // Gutter width multiplied by two to account for offset's and this column's gutter
     }
 }
