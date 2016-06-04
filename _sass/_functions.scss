@@ -1,0 +1,64 @@
+// Functions & Mixins
+// =============================================================================
+
+// Fancy Typographic-appropriate Underlines
+// =============================================================================
+// Adapted from Eager's SmartUnderlines
+// https://eager.io/blog/smarter-link-underlines/
+
+@mixin textShadowToCropUnderline($color) {
+    text-shadow: .03em 0 $color,
+                -.03em 0 $color,
+                0 .03em $color,
+                0 -.03em $color,
+                .06em 0 $color,
+                -.06em 0 $color,
+                .09em 0 $color,
+                -.09em 0 $color,
+                .12em 0 $color,
+                -.12em 0 $color,
+                .15em 0 $color,
+                -.15em 0 $color;
+}
+
+@mixin fancyUnderlines($selectionColor: $brand-color, $backgroundColor: white, $color: $brand-color) {
+    @include textShadowToCropUnderline($backgroundColor);
+
+    background-image:       linear-gradient($backgroundColor, $backgroundColor),
+                            linear-gradient($backgroundColor, $backgroundColor),
+                            linear-gradient($color, $color);
+    background-size:        .05em 1px,
+                            .05em 1px, // x-offset for "cutting in" on both sides of underline
+                            1px 1px; // Thickness of underline
+    background-repeat:      no-repeat,
+                            no-repeat,
+                            repeat-x;
+    background-position:    0% 100%, // Vertical position of underline
+                            100% 100%,
+                            0% 100%;
+
+    color: $color;
+    text-decoration: none;
+
+    &::selection {
+        @include textShadowToCropUnderline($selectionColor);
+        background: $selectionColor;
+    }
+
+    &::-moz-selection {
+        @include textShadowToCropUnderline($selectionColor);
+        background: $selectionColor;
+    }
+
+    &:before,
+    &:after,
+    *,
+    *:before,
+    *:after {
+        text-shadow: none;
+    }
+
+    &:visited {
+        color: $color;
+    }
+}

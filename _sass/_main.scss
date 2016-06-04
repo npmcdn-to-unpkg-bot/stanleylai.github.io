@@ -37,4 +37,7 @@
     list-style: none;
 }
 
+// Link is current page
+.nav__link--current {
+    @include fancyUnderlines();
 }
