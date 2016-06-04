@@ -64,4 +64,8 @@
     &:visited {
         color: $color;
     }
+
+    &:hover {
+        color: darken($color, 15%);
+    }
 }
