@@ -4,7 +4,7 @@
 @charset "utf-8";
 
 // Base Unit
-$base-unit: 8;
+$base-unit: 8px;
 
 // Typography
 $base-font-family:  -apple-system, BlinkMacSystemFont,
@@ -16,7 +16,7 @@ $small-font-size:   $base-font-size * 0.75;
 $base-line-height:  1.5;
 
 // Spacing
-$spacing-unit:      40px;
+$spacing-unit:      $base-unit * 4;
 
 // Colours
 $text-color:        #848484;
@@ -41,6 +41,7 @@ $gutter: 1.25%;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
+        "functions",
         "grid",
         "base",
         "typography",

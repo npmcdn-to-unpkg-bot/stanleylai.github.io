@@ -1,8 +1,40 @@
 // Main Styles
+// =============================================================================
 
-// Header Styles
+// Site Header Styles
+// =============================================================================
 .site-header {
     p {
         margin: 0;
     }
+}
+
+// Header Social Icons
+.site-header__social {
+    margin-top: $spacing-unit;
+    padding: 0;
+}
+
+.site-header__social-item {
+    display: inline-block;
+
+    margin-right: 1em;
+
+    list-style: none;
+}
+
+// Nav
+// =============================================================================
+.nav {
+    padding: 0;
+}
+
+.nav__link {
+    display: inline-block;
+
+    margin-right: 1em;
+
+    list-style: none;
+}
+
 }
