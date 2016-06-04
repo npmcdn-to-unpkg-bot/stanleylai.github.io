@@ -1,0 +1,36 @@
+// Typography Styles
+
+
+html,
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+    color: $text-color;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: $black-color;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+p {
+
+}
+
+a {
+    color: $brand-color;
+    text-decoration: none;
+
+    &:hover,
+    .a--black:hover {
+        color: $brand-color--dark;
+    }
+}

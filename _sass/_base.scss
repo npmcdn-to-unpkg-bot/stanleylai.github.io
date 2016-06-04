@@ -3,4 +3,10 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+
+    transition: all 150ms ease-out;
+}
+
+body {
+    margin: $spacing-unit*2 0;
 }

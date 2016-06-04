@@ -7,25 +7,28 @@
 $base-unit: 8;
 
 // Typography
-$base-font-family: -apple-system, BlinkMacSystemFont,
+$base-font-family:  -apple-system, BlinkMacSystemFont,
                     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
                     "Helvetica Neue", sans-serif;
-$base-font-size:   $base-unit * 2;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.75;
-$base-line-height: 1.5;
+$base-font-size:    $base-unit * 2;
+$base-font-weight:  400;
+$small-font-size:   $base-font-size * 0.75;
+$base-line-height:  1.5;
 
 // Spacing
-$spacing-unit:     40px;
+$spacing-unit:      40px;
 
 // Colours
-$text-color:       #848484;
-$background-color: #fff;
-$brand-color:      #6CACC7;
+$text-color:        #848484;
+$background-color:  #FFF;
+$brand-color:       #6CACC7;
+$brand-color--dark: darken($brand-color, 10%);
 
-$grey-color:       #F4F4F4;
-$grey-color-light: lighten($grey-color, 25%);
-$grey-color-dark:  darken($grey-color, 75%);
+$black-color:       #272727;
+$white-color:       #FFF;
+$grey-color:        #F4F4F4;
+$grey-color--light: lighten($grey-color, 15%);
+$grey-color--dark:  darken($grey-color, 70%);
 
 // Grid Variables
 $max-width: 1280px;
@@ -40,5 +43,7 @@ $gutter: 1.25%;
 @import
         "grid",
         "base",
+        "typography",
+        "main",
         "syntax-highlighting"
 ;

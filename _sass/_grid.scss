@@ -19,10 +19,10 @@
 
     width: 100%;
     max-width: $max-width;
-    // margin: 0 auto;
+    margin: $spacing-unit auto;
 
     // DEBUG
-    margin: 20px auto;
+    // margin: 20px auto;
 }
 
 // Column
@@ -32,7 +32,7 @@
     margin-left: $gutter;
 
     // DEBUG
-    outline: 1px solid red;
+    // outline: 1px solid red;
 
     // Add outside gutter for last column
     &:last-child {
@@ -40,19 +40,19 @@
     }
 }
 
-// Column Size
-// Expand .column to occupy specific number of columns
+// Column Size Modifier
+// Expand .column to occupy $i number of columns
 @for $i from 1 through $max-columns {
-    .column__size-#{$i} {
+    .column--size-#{$i} {
         flex: 0 0;
         flex-basis: columnsWidth($i);
     }
 }
 
-// Column Offset
-// Push .column to the right by specified number of columns
+// Column Offset Modifier
+// Push .column to the right by $i number of columns
 @for $i from 1 through $max-columns {
-    .column__offset-#{$i} {
+    .column--offset-#{$i} {
         margin-left: $gutter * 2 + columnsWidth($i); // Gutter width multiplied by two to account for offset's and this column's gutter
     }
 }
