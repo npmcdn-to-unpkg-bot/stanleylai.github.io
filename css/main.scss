@@ -7,35 +7,36 @@
 $base-unit: 8px;
 
 // Typography
-$base-font-family:  -apple-system, BlinkMacSystemFont,
-                    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-                    "Helvetica Neue", sans-serif;
-$base-font-size:    $base-unit * 2;
-$base-font-weight:  400;
-$small-font-size:   $base-font-size * 0.75;
-$base-line-height:  1.5;
+$base-font-family:      -apple-system, BlinkMacSystemFont,
+                        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+                        "Helvetica Neue", sans-serif;
+$base-font-size:        $base-unit * 2;
+$base-font-weight:      400;
+$small-font-size:       $base-font-size * 0.75;
+$base-line-height:      1.5;
 
 // Spacing
-$spacing-unit:      $base-unit * 4;
+$spacing-unit:          $base-unit * 4;
 
 // Colours
-$text-color:        #848484;
-$background-color:  #FFF;
-$brand-color:       #6CACC7;
-$brand-color--dark: darken($brand-color, 10%);
+$text-color:            #848484;
+$background-color:      #FFF;
+$brand-color:           #6CACC7;
+$brand-color--light:    lighten($brand-color, 10%);
+$brand-color--dark:     darken($brand-color, 10%);
 
-$black-color:       #272727;
-$white-color:       #FFF;
-$grey-color:        #F4F4F4;
-$grey-color--light: lighten($grey-color, 15%);
-$grey-color--dark:  darken($grey-color, 70%);
+$black-color:           #272727;
+$white-color:           #FFF;
+$grey-color:            #F4F4F4;
+$grey-color--light:     lighten($grey-color, 15%);
+$grey-color--dark:      darken($grey-color, 70%);
 
 // Grid Variables
-$max-width: 1280px;
-$max-width--mobile: 380px;
-$max-columns: 16;
-$max-columns--mobile: 8;
-$gutter: 1.25%;
+$max-width:             1280px;
+$max-width--mobile:     380px;
+$max-columns:           16;
+$max-columns--mobile:   8;
+$gutter:                1.25%;
 
 
 
