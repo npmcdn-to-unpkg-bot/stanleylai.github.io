@@ -21,12 +21,15 @@
                 -.15em 0 $color;
 }
 
-@mixin fancyUnderlines($selectionColor: $brand-color, $backgroundColor: white, $color: $brand-color) {
+@mixin fancyUnderlines($selectionColor: $brand-color,
+                        $backgroundColor: white,
+                        $color: $brand-color,
+                        $underlineColor: lighten($color, 15%)) {
     @include textShadowToCropUnderline($backgroundColor);
 
     background-image:       linear-gradient($backgroundColor, $backgroundColor),
                             linear-gradient($backgroundColor, $backgroundColor),
-                            linear-gradient($color, $color);
+                            linear-gradient($underlineColor, $underlineColor);
     background-size:        .05em 1px,
                             .05em 1px, // x-offset for "cutting in" on both sides of underline
                             1px 1px; // Thickness of underline
