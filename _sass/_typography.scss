@@ -1,5 +1,5 @@
 // Typography Styles
-
+// =============================================================================
 
 html,
 body {
@@ -19,18 +19,43 @@ h6, .h6 {
     color: $black-color;
     font-weight: bold;
     text-decoration: none;
+
+    &.u-black,
+    .u-black {
+        color: $black-color;
+    }
+}
+
+h1, .h1 {
+    color: $text-color;
+    font-size: $base-font-size * 1.5;
+    font-weight: normal;
+}
+
+h4, .h4 {
+    color: $black-color;
+    font-size: $base-font-size;
+}
+
+h5, .h5 {
+    color: $black-color;
+    font-size: $base-font-size;
+    font-weight: normal;
 }
 
 p {
-
+    margin: 0.85em 0;
 }
 
 a {
     color: $brand-color;
     text-decoration: none;
 
-    &:hover,
-    .a--black:hover {
+    p & {
+        @include fancyUnderlines();
+    }
+
+    &:hover {
         color: $brand-color--dark;
     }
 }

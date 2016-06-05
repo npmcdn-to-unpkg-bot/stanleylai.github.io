@@ -17,7 +17,8 @@
 
 .site-header__social-item {
     display: inline-block;
-
+    width: 1.5em;
+    height: 1.5em;
     margin-right: 1em;
 
     list-style: none;
@@ -48,4 +49,24 @@
 // Link is current page
 .nav__link--current {
     @include fancyUnderlines();
+}
+
+// Selected Work Styles
+// =============================================================================
+.site-work {
+    h4 {
+        margin: 0;
+    }
+
+    h5 {
+        margin: 0;
+    }
+
+    p:first-child {
+        margin-top: 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
 }
