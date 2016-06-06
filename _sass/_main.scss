@@ -1,6 +1,22 @@
 // Main Styles
 // =============================================================================
 
+// Flickity Gallery Styles - Learn more at https://github.com/metafizzy/flickity
+// =============================================================================
+.gallery {
+    border: 1px solid $grey-color;
+
+    * {
+        transition: none; // To avoid conflicts with our own transitions
+    }
+
+    // Dot navigation styles
+    .flickity-page-dots .dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
 // Site Header Styles
 // =============================================================================
 .site-header {

@@ -19,7 +19,25 @@ img {
     height: auto;
 }
 
-// DEBUG CODE
+// Utility Styles
+// =============================================================================
+.u-video-wrapper {
+    position: relative;
+    // padding-bottom: 56.25%;
+    padding-bottom: 54%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.u-video-wrapper iframe,
+.u-video-wrapper object,
+.u-video-wrapper embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .u-debug {
     outline: 1px solid red;
 }
