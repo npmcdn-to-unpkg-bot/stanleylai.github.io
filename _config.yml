@@ -17,3 +17,4 @@ github_username: stanleylai
 
 # Build settings
 markdown: kramdown
+show_nav: false

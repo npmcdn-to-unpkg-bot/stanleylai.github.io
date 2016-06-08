@@ -1,28 +1,60 @@
 ---
 layout: default
 title: Selected Works
-show_in_nav: yes
-show_site_nav: yes
 ---
 
-<!--
-<div class="home">
+<div class="works-grid">
 
-  <h1 class="page-heading">Posts</h1>
+    <div class="row">
+        <section class="works-grid__item column column--size-5 column--offset-3">
+            <a href="./work/ann-taylor/">
+                <div class="works-grid__overlay">
+                    <div class="works-grid__content-wrapper">
+                        <h4 class="works-grid__title">Ann Taylor</h4>
+                        <div class="works-grid__arrow">&#10142;</div>
+                    </div>
+                </div>
+            </a>
+            <img src="./work/ann-taylor/assets/hero.png">
+        </section>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <section class="works-grid__item column column--size-5">
+            <a href="./work/bose/">
+                <div class="works-grid__overlay">
+                    <div class="works-grid__content-wrapper">
+                        <h4 class="works-grid__title">Bose</h4>
+                        <div class="works-grid__arrow">&#10142;</div>
+                    </div>
+                </div>
+            </a>
+            <img src="./work/bose/assets/hero.png">
+        </section>
+    </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    <div class="row">
+        <section class="works-grid__item column column--size-5 column--offset-3">
+            <a href="./work/inkcartridges/">
+                <div class="works-grid__overlay">
+                    <div class="works-grid__content-wrapper">
+                        <h4 class="works-grid__title">InkCartridges.com</h4>
+                        <div class="works-grid__arrow">&#10142;</div>
+                    </div>
+                </div>
+            </a>
+            <img src="./work/inkcartridges/assets/hero.png">
+        </section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+        <section class="works-grid__item column column--size-5">
+            <a href="./work/dife/">
+                <div class="works-grid__overlay">
+                    <div class="works-grid__content-wrapper">
+                        <h4 class="works-grid__title">Design is for Everyone</h4>
+                        <div class="works-grid__arrow">&#10142;</div>
+                    </div>
+                </div>
+            </a>
+            <img src="./work/dife/assets/hero.png">
+        </section>
+    </div>
 
 </div>
--->

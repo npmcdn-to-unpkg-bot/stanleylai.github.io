@@ -67,6 +67,61 @@
     @include fancyUnderlines();
 }
 
+// Works Grid
+// =============================================================================
+.works-grid {
+    .row {
+        margin: 1em auto;
+    }
+}
+
+.works-grid__item {
+    position: relative;
+}
+
+.works-grid__overlay {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background: rgba($black-color, 0.98);
+
+    opacity: 0;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.works-grid__content-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.works-grid__title {
+    position: absolute;
+    top: -$base-unit*1.5;
+    left: $spacing-unit;
+
+    margin: 0;
+
+    color: white;
+    font-weight: normal;
+}
+
+.works-grid__arrow {
+    position: absolute;
+    top: -$base-unit*1.5;
+    right: $spacing-unit;
+
+    color: white;
+}
+
 // Selected Work Styles
 // =============================================================================
 .site-work {
