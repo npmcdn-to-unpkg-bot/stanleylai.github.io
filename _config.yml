@@ -8,7 +8,7 @@
 # Site settings
 title: Selected Works of Stanley Lai
 email: stanleylai.sg@gmail.com
-description: Product Designer who brings design thinking with him to teams. Fascinated by the power of design to enable and inspire for the common good.
+description: Product Designer. Fascinated by the power of design to enable and inspire for the common good.
 baseurl: "" # the subpath of your site, e.g. /blog
 # url: "http://www.stanleylai.xyz" # the base hostname & protocol for your site
 url: "http://localhost:4000" # for DEBUG purposes
